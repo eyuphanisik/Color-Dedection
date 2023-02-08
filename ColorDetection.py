@@ -46,8 +46,8 @@ def openCam(cam, upColor, lowColor):
         # Draw a circle at the center of the object
         cv2.circle(frame, (cx, cy), 5, (0, 0, 255), -1)
         
-        send_data = bytes(str(isFound), encoding='utf-8')
-        sock.sendto(send_data, address)
+        send_data = f"{cx} {cy} {str(isFound)}"
+        sock.sendto(send_data.encode(), address)
         print(send_data)
         # Her göndermeden sonra bekleme
         cv2.imshow("no", frame)
