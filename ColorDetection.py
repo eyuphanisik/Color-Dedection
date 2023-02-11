@@ -15,7 +15,7 @@ def colorDetection(frame, upColor, lowColor):
 
 def isFind(color):
         
-        if len(color[color > 20]) > 10000:
+        if len(color[color > 20]) > 10:
             return True
         return False
         
@@ -49,6 +49,7 @@ def openCam(cam, upColor, lowColor):
         send_data = f"{cx} {cy} {str(isFound)}"
         sock.sendto(send_data.encode(), address)
         print(send_data)
+        time.sleep(1)
         # Her göndermeden sonra bekleme
         cv2.imshow("no", frame)
         if cv2.waitKey(1)==27:

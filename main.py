@@ -6,4 +6,4 @@ def run_other_file():
         code = f.read()
         exec(code)
 
-openCam(0,np.array([183, 255, 255]), np.array([170, 100, 60]))
+openCam(0,np.array([128, 255, 255]), np.array([90, 50, 70]))
